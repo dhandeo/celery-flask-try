@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+
+    <div class="auth-form-header">
+        <h1> Celery Dashboard </h1>
+    </div>
+    <h2> Workers - {{ workers | length }}  </h2>
+    <ul>
+        {% for a_worker in workers %}
+        <li> {{ a_worker | string }} </li>
+        {% else %}
+        No workers !
+        {% endfor %}
+    </ul>
+    <h2> Tasks - {{ tasks | length }}</h2>
+        {% for a_worker in tasks %}
+        <li> {{a_worker }}</li>
+        {% else %}
+        No workers !
+        {% endfor %}
+    <ul>
+
+    </ul>
+</head>
+<body>
+
+</body>
+</html>
