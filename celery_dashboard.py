@@ -20,8 +20,10 @@ def make_celery(app):
 
 app = flask.Flask(__name__)
 app.config.update(
-    CELERY_BROKER_URL='mongodb://127.0.0.1/celery',
-    CELERY_RESULT_BACKEND='mongodb://127.0.0.1/celery'
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0',
+    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+    # CELERY_BROKER_URL='mongodb://127.0.0.1/celery',
+    # CELERY_RESULT_BACKEND='mongodb://127.0.0.1/celery'
 )
 
 celery = make_celery(app)

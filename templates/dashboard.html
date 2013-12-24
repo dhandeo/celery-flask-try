@@ -1,11 +1,24 @@
 <html>
 
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#addtask").click(function() {
+           alert("A task is added");
+        });
+    });
 
 
+</script>
+
+</head>
+<body>
     <div class="auth-form-header">
         <h1> Celery Dashboard </h1>
     </div>
+    <button id="addtask"> Add task </button>
+    <br>
     <h2> Workers - {{ workers | length }}  </h2>
     <ul>
         {% for a_worker in workers %}
@@ -23,8 +36,6 @@
     <ul>
 
     </ul>
-</head>
-<body>
 
 </body>
 </html>
